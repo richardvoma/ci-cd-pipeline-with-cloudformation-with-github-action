@@ -2,7 +2,7 @@ Resources:
   S3Bucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: voma-static1-websit2e-bucket
+      BucketName: voma1-static1-websit2e-bucket
       AccessControl: PublicRead
       WebsiteConfiguration:
         IndexDocument: index.html
