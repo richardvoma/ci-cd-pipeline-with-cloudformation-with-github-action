@@ -21,8 +21,14 @@ jobs:
         run: |
           aws cloudformation deploy \
             --template-file ./single-tier-app.yaml \
-            --stack-name voma-stack2 \
+            --stack-name my-stack \
             --capabilities CAPABILITY_NAMED_IAM \
             --parameter-overrides \
-              S3BucketName=voma1-static1-websit2e-bucket \
-            --region us-east-1    
+              S3BucketName=richie-static1-websit2e-bucket \
+            --region us-east-1  
+      - name: Sync with S3 Bucket
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        run: |
+          aws s3 sync . s3://richie-static1-websit2e-bucket/ --exclude "*"--include "index.html" --region us-east-1        
