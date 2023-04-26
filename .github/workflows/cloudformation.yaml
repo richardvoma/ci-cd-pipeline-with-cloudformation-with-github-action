@@ -21,10 +21,8 @@ jobs:
         run: |
           aws cloudformation deploy \
             --template-file ./single-tier-app.yaml \
-            --stack-name my-stack2 \
+            --stack-name voma-stack2 \
             --capabilities CAPABILITY_NAMED_IAM \
             --parameter-overrides \
               S3BucketName=voma1-static1-websit2e-bucket \
-            --region us-east-1
-
-      
+            --region us-east-1    
