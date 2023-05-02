@@ -2,7 +2,7 @@ Resources:
   S3Bucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: jangmia-static-website-bucket
+      BucketName: jango-static-website-bucket
       PublicAccessBlockConfiguration:
           BlockPublicAcls: false
       OwnershipControls:
